@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-left>Editions Passées</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content >
+		<div class="container">
+			<div class="timeline" *ngIf="infos">
+				<div class="swiper-container">
+				<ion-slides #wizardSlider pager="true" direction="horizontal" paginationType="bullets" autoplay="5000" loop="true" speed="3000" class="swiper-wrapper">
+					<ion-slide class="swiper-slide" *ngFor="let obj of infos"  [ngStyle]="{ 'background-image': 'url(' + obj.image + ')' }">
+						<div class="swiper-slide-content"><span class="timeline-year">{{obj.jour}}</span>
+							<h3 text-left class="timeline-title">{{obj.title}}</h3>
+							<h5 text-left class="timeline-text">{{obj.lieu}}</h5>
+							<p class="timeline-text" [innerHTML]="obj.d |slice : 0 :18"></p>
+							<button clear (click)="showVideo()" ion-button color="primary" class="pricing-button">En Savoir plus</button>
+						</div>
+					</ion-slide>
+				</ion-slides>
+				<div class="swiper-button-prev" (click)="changeSlide(0)"></div>
+				<div class="swiper-button-next" (click)="changeSlide(1)"></div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</div>
+	<!-- style="background-image: url(https://unsplash.it/1920/500?image=11)" -->
+
+</ion-content>

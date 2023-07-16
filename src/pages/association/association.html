@@ -1,0 +1,65 @@
+ <ion-header>
+  <ion-navbar>
+    <ion-title>Organisation</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>    
+  </ion-navbar>
+</ion-header>
+<!--
+
+<ion-content>
+	<p *ngIf="objSpinner" text-center><ion-spinner name="dots"></ion-spinner></p>
+	<ion-grid *ngIf="!objSpinner && infos!==undefined" no-padding>
+		<ion-row>
+			<ion-col col-12 col-md-6 col-sm-6>
+				<div (click)="showVideo()" >
+					<img src="{{infos.image}}">
+				</div>
+			</ion-col>
+		
+			<ion-col col-12 col-md-6 col-sm-6 class="lien">
+				<h3 class="titre">{{infos.title}}</h3>
+				<p>{{infos.description}}</p>
+				<ion-list>
+					<ion-item (click)="openWeb()">
+						<ion-icon name="ios-globe-outline" item-start></ion-icon>
+						<p>Visitez notre site web</p>
+						<h4>{{infos.liens_site}}</h4>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="logo-instagram" item-start></ion-icon>
+						<p>Retrouvez nous sur Instagram</p>
+						<h4>{{infos.instagram}}</h4>
+					</ion-item>	
+				</ion-list>
+			</ion-col> 
+		</ion-row>
+	</ion-grid>
+  
+</ion-content> -->
+
+<!-- <wizard *ngIf="params.data!==undefined && params.events!==undefined && params.data.items !== undefined"
+  [data]="params.data"
+  [events]="params.events">
+</wizard> -->
+<ion-content>
+	<div class="slide-content" *ngIf="params.data!==undefined && params.events!==undefined">
+		<button color="light" skip button-clear clear ion-button text-right (click)="onEvent('onFinish')">
+		</button>
+		<ion-slides #idSlider (ionSlideWillChange)="slideWillChange()" (ionSlideDidChange)="slideHasChanged()" pager="true">
+			<ion-slide background-size *ngFor="let item of swipe; let i = index" [ngStyle]="{'background-image': 'url(' + item.backgroundImage + ')'}">
+				<div wizard-description>
+					<h1 class="animated fadeIn" wizard-title>{{item.title}}</h1>
+					<div class="animated slideInRight delay-1s" [innerHTML]=item.description wizard-body-text></div>
+				</div>
+			</ion-slide>
+		</ion-slides>
+	</div>
+		<div class="swiper-button-prev" (click)="changeSlide(0)"></div>
+		<div class="swiper-button-next" (click)="changeSlide(1)"></div>
+		<div class="swiper-pagination"></div>
+</ion-content>
+	

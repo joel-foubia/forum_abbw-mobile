@@ -1,0 +1,180 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Inscription</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar class="interest">
+    <ion-segment [(ngModel)]="segment" color="light">
+        <ion-segment-button value="1">
+           Page 1
+        </ion-segment-button>
+        <ion-segment-button value="2">
+          Page 2
+        </ion-segment-button>
+        <ion-segment-button value="3">
+          Page 3
+        </ion-segment-button>
+
+    </ion-segment>
+</ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 text-center style="font-weight: lighter !important" text-uppercase>Pré-Inscription</h1>
+  <p text-center>Suite à votre pré-inscription, vous recevez : un accusé de réception et un formulaire avec le montant à payer de votre
+    participation ainsi qu’une facture. Gratuité pour les entrepreneurs venant en dehors de l’Europe.</p>
+
+    <div [ngSwitch]="segment">
+      <div *ngSwitchCase="'1'">
+        <ion-list>
+          <ion-item id="input" no-lines>
+            <ion-select cancelText="Annuler" placeholder="Titre" [(ngModel)]="form.title">
+              <ion-option>M.</ion-option>
+              <ion-option>Mme</ion-option>
+              <ion-option>Mlle</ion-option>
+            </ion-select>
+          </ion-item>
+          <hr>
+
+  
+          <ion-item id="input" no-lines>
+            <ion-label floating>Prénom *</ion-label>
+            <ion-input color="dark" type="text" [(ngModel)]='form.surname'></ion-input>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-label floating>Nom *</ion-label>
+            <ion-input color="dark" type="text" [(ngModel)]='form.name'></ion-input>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-label floating>Addresse Email *</ion-label>
+            <ion-input color="dark" type="email" [(ngModel)]='form.email'></ion-input>
+          </ion-item>
+          <hr>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'2'">
+        <ion-list>
+          <ion-item id="input" no-lines>
+            <ion-label floating>Téléphone</ion-label>
+            <ion-input color="dark" type="tel" [(ngModel)]='form.tel'></ion-input>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-label floating>Téléphone Portable</ion-label>
+            <ion-input color="dark" type="tel" [(ngModel)]='form.ptel'></ion-input>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-label floating>Entreprise</ion-label>
+            <ion-input color="dark" type="text" [(ngModel)]='form.company'></ion-input>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-label floating>Fonction</ion-label>
+            <ion-input color="dark" type="text" [(ngModel)]='form.post'></ion-input>
+          </ion-item>
+          <hr>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'3'">
+        <ion-list>
+
+          <ion-item id="input" no-lines>
+            <ion-label floating>Site web</ion-label>
+            <ion-input color="dark" type="text" [(ngModel)]='form.website'></ion-input>
+          </ion-item>
+          <hr>
+  
+  
+          <ion-item id="input" no-lines>
+            <ion-select cancelText="Annuler" [(ngModel)]="form.pays" placeholder="Pays">
+              <ion-option *ngFor="let c of countries">{{c.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-select cancelText="Annuler" placeholder="Secteur d'activité" [(ngModel)]="form.activity">
+              <ion-option>Agro-Industrie</ion-option>
+              <ion-option>Automobile</ion-option>
+              <ion-option>Banques, Assurances et Finances</ion-option>
+              <ion-option>Bois</ion-option>
+              <ion-option>Chambre de Commerce</ion-option>
+              <ion-option>Communication</ion-option>
+              <ion-option>Energie</ion-option>
+              <ion-option>Environement</ion-option>
+              <ion-option>Industrie</ion-option>
+              <ion-option>Logistique & Transport</ion-option>
+              <ion-option>NTIC</ion-option>
+              <ion-option>Santé</ion-option>
+              <ion-option>Télécom</ion-option>
+              <ion-option>Tourisme</ion-option>
+              <ion-option>Autres</ion-option>
+            </ion-select>
+          </ion-item>
+          <hr>
+  
+          <ion-item id="input" no-lines>
+            <ion-select cancelText="Annuler" placeholder="Employés" [(ngModel)]="form.employeesnum">
+              <ion-option>Moins de 50 personnes</ion-option>
+              <ion-option>50-250 personnes</ion-option>
+              <ion-option>251-500 personnes</ion-option>
+              <ion-option>501-1,000 personnes</ion-option>
+              <ion-option>Plus de 1000 personnes</ion-option>
+            </ion-select>
+          </ion-item>
+          <hr>
+        </ion-list>
+      </div>
+    </div>
+
+ 
+  <!-- <button id="send" (click)="send()" ion-button block color="primary">Envoyer</button> -->
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-grid transparent>
+    <ion-row no-padding>
+      <ion-col no-padding>
+        <button ion-button block (click)="send()">
+          Envoyer
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer> -->
+
+<ion-fab class="animated fadeIn" *ngIf="segment == '3'" #fab bottom right>
+    <button color="primary" button-ion-fab ion-fab (click)="send()">
+     <ion-icon name="md-checkmark"></ion-icon>
+   </button>
+</ion-fab>
+<ion-fab class="animated fadeIn" *ngIf="segment == '2' || segment == '3'" #fab bottom left>
+    <button color="gris" button-ion-fab ion-fab (click)="back()">
+     <ion-icon name="md-arrow-back"></ion-icon>
+   </button>
+</ion-fab>
+<ion-fab class="animated fadeIn" *ngIf="segment == '1' || segment == '2'" #fab bottom right>
+    <button color="secondary" button-ion-fab ion-fab (click)="next()">
+     <ion-icon name="md-arrow-forward"></ion-icon>
+   </button>
+</ion-fab>

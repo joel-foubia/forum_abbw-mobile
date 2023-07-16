@@ -1,0 +1,15 @@
+page-parrains {
+	[zone-parrain]{
+		background-color: color($colors,gris);
+		padding: 5px;
+		p{
+			color: color($colors, light);
+			text-align: justify;
+		}
+	}
+
+	h4{
+		font-size: 1.0em;
+		text-align: center;
+	}
+}

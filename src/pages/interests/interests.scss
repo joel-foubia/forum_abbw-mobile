@@ -1,0 +1,132 @@
+page-interests {
+	.scroll-content {
+		background-image: url('../assets/img/welcome.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	#slidbtn {
+		text-align: center;
+		width: 200px;
+		font-size: 1.3em;
+	}
+	#arrow {
+		float: left;
+	}
+	button.swiper-pagination-bullet.swiper-pagination-bullet-active {
+		background-color: color($colors, primary);
+		bottom: unset;
+	}
+	div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+		bottom: unset !important;
+		margin-top: 20px;
+	}
+	div.slide-zoom {
+		width: unset;
+	}
+	// ion-slides.slides {
+	// 	height: 90% !important;
+	// }
+	.grd_btn {
+		text-align: center;
+		height: 9rem !important;
+		width: 10rem !important;
+		text-transform: none;
+
+		font-weight: lighter;
+	}
+	ion-input {
+		border-radius: 20px;
+		text-align: center;
+		/* .input-cover{
+			background-color:grey;
+			border-radius: 20px;
+			color: color($colors, noir);
+		} */
+	}
+
+	#pseudo {
+		display: block;
+		margin: auto;
+		text-align: center;
+		background: rgba(255, 255, 255, 0.8);
+		width: 300px !important;
+		border-radius: 20px !important;
+		color: black !important;
+	}
+	#btn {
+		height: 120px;
+		width: 120px;
+		border-radius: 20px !important;
+
+		label {
+			color: color($colors, light);
+		}
+	}
+
+	#btn #starIcon {
+		margin-left: 80px;
+		margin-top: 5px;
+		width: 15px;
+	}
+	#btn img {
+		width: 60px;
+	}
+	ion-col.col {
+		padding-top: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	ion-grid {
+		margin-top: 40px;
+	}
+	#title {
+		color: white;
+		position: absolute;
+		margin-top: -200px;
+		margin: auto;
+	}
+	p {
+		color: white;
+	}
+
+	#italictext {
+		font-style: italic;
+	}
+
+	#slide1 img {
+		width: 250px;
+	}
+
+	h3 {
+		color: color($colors, light);
+		font-size: 0.9em;
+		font-weight: bold;
+		margin: 5px;
+		line-height: 22px;
+	}
+	h6 {
+		color: color($colors, light);
+
+		padding: 0px !important;
+		margin-bottom: 30px !important;
+	}
+
+	ion-footer {
+		background-color: color($colors, primary) !important;
+	}
+	.pic-bloc {
+		img {
+			width: 150px !important;
+			// border: 1px solid white !important;
+			border-radius: 100% !important;
+		}
+	}
+	#qrBtn {
+		margin-top: 50px !important;
+	}
+	h2 {
+		color: color($colors, light) !important;
+	}
+}

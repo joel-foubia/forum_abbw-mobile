@@ -1,0 +1,121 @@
+page-inscription {
+
+	.scroll-content{
+		// background-color: lighten(color($colors,gris),6%) !important;
+		background-color: color($colors, lightest) !important
+	}
+	.interest .toolbar-background-md {
+		background-color: lighten(color($colors, gris), 6%) !important;
+	}
+
+  
+	h1,
+	p {
+		color: color($colors, dark);
+	}
+/* 
+    #input {
+		display: block;
+		margin: auto;
+		text-align: left;
+		background: rgba(31, 31, 31, 0.8);
+		//width: 300px !important;
+		border-radius: 2px !important;
+		color: black !important;
+		border-radius: 0.45em !important;
+		height: 50px !important;
+	} */
+
+	#message {
+		text-align: center;
+		border-radius: 5px !important;
+		color: white;
+		background: rgba(31, 31, 31, 0.8);
+	}
+	.col {
+		//padding: 0px !important;
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+	}
+	ion-label {
+		color: rgb(175, 170, 170) !important;
+	}
+	ion-item {
+		height: 30px !important;
+	}
+	ion-input.input {
+		//margin-top: -31px !important;
+		color: white !important;
+	}
+	ion-label {
+		margin-top: -18px !important;
+	}
+	#send {
+		//margin-bottom: -90px !important;
+		//margin-top: 85px
+	}
+	ion-select.select {
+		max-width: 100%;
+		padding-left: 0px;
+		padding-top: 8px;
+	}
+	div.select-text {
+		color: color($colors, dark) !important;
+		max-width: 100%;
+    }
+    ion-item {
+		margin-bottom: 10px !important;
+	}
+	ion-slides.slides {
+		height: unset;
+	}
+	div.swiper-pagination{
+		bottom: 0px !important;
+	}
+	ion-footer.footer.footer-md::before{
+		background-image: none !important
+	}
+	hr {
+		background-color: red !important;
+		width: 40% !important;
+		display: inline-block !important;
+		margin-left: 26px !important;
+		
+	}
+	#input:focus + hr {
+		transition: (.3s width ease-in-out);
+		cursor: pointer;
+		width: 100%;
+	}
+
+	ion-item.item {
+		display: block;
+		margin: auto;
+		text-align: left;
+		width: 345px !important;
+		color: black !important;
+	}
+
+	ion-item {
+		height: 60px !important;
+	}
+
+	ion-input.input {
+		color: color($colors, dark) !important;
+	}
+	ion-item {
+		margin-bottom: 10px !important;
+	}
+	ion-label {
+		color: color($colors, dark) !important;
+	}
+
+	.select-text::-webkit-input-placeholder {
+        color: color($colors, dark) !important;
+        // width: 90% !important;
+    }
+
+	ion-fab[bottom]{
+		bottom: 60px !important
+	}
+}

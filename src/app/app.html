@@ -1,0 +1,47 @@
+<ion-menu [content]="mycontent" id="menu-avatar">
+  <ion-content padding class="my-container">
+    <ion-grid class="header-background-image" *ngIf="user">
+      <ion-row>
+        <ion-col col-2>
+          <!-- <button ion-button menuClose icon-only clear>
+            <ion-icon name="md-settings"></ion-icon>
+          </button> -->
+        </ion-col>
+        <ion-col menuClose col-8 text-center>
+          <ion-thumbnail>
+            <img *ngIf="user.user_image" [src]="user.user_image" alt="User image">
+            <img *ngIf="!user.user_image" src="assets/img/logo_forum.png" alt="User image">
+          </ion-thumbnail>
+          <h2 menuClose>{{user?.pseudo}}</h2>
+          <p class="bloc-cat" *ngIf="user.cats">
+            <span *ngFor="let obj of user.cats">{{obj.title}}</span> 
+          </p>
+        </ion-col>
+        <ion-col col-2>
+          <!-- <button menuClose ion-button icon-only clear (click)="logOff()">
+            <ion-icon name="log-out"></ion-icon>
+          </button> -->
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+    <ion-grid *ngIf="!user">
+      <ion-row>
+        <ion-col col-12>
+          <h4>AFRICA-BELGIUM BUSINESS WEEK 2019 </h4>
+          <p>Le grand forum B2B Europe-Afrique</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list class="transp">
+      <button menuClose ion-item no-lines *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-avatar item-start>
+          <img src="{{p.icon}}">
+        </ion-avatar>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #mycontent swipeBackEnabled="false"></ion-nav>

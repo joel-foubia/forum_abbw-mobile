@@ -1,0 +1,91 @@
+page-contact {
+  ion-header {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+
+  .scroll-content {
+    background-color: #f3f3f3;
+  }
+
+  ion-fab {
+    margin-left: 80%;
+    margin-top: 130%;
+  }
+
+  p {
+    line-height: 23px;
+    font-size: 1.1em;
+  }
+
+  [ion-button] {
+    font-size: 1.0em;
+    color: color($colors, light) !important;
+  }
+
+
+  .top-header {
+    text-align: center;
+
+    img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    h3 {
+    }
+  }
+
+  img {
+    width: 140px;
+  }
+
+  .list-item ion-item {
+    background-color: transparent;
+
+    // color: color($colors, light);
+    p,
+    h4 {
+      // color:color($colors, light);
+    }
+  }
+
+  .sebm-google-map-container {
+    height: 300px;
+  }
+
+  .head {
+    border: 1px solid yellow !important;
+    // background-image: url('assets/images/textile-2918844_1920.jpg');
+  }
+
+  ion-input {
+    font-weight: lighter;
+    border: 1px solid rgba($color: #f3f3f3, $alpha: 0.2);
+    margin: auto !important;
+    width: 95% !important;
+    // color: color($colors, dark);
+    margin-bottom: 5px !important;
+    background-color: rgba($color: #f3f3f3, $alpha: 0.5) !important;
+    border-radius: 10px;
+  }
+
+  .text-input:-ms-input-placeholder {
+    color: rgba($color: #000000, $alpha: 0.7) !important;
+  }
+
+  .text-input::-webkit-input-placeholder {
+    color: rgba($color: #000000, $alpha: 0.7) !important;
+  }
+
+  .item {
+    font-weight: lighter;
+    margin: auto !important;
+    width: 95% !important;
+    margin-bottom: 5px !important;
+    background-color: rgba($color: #f3f3f3, $alpha: 0.5) !important;
+    border-radius: 10px;
+  }
+
+}

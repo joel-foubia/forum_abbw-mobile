@@ -1,0 +1,74 @@
+
+
+
+<ion-content text-center>
+
+  <ion-slides (ionSlideDidChange)="slideChanged()" ion-fixed>
+      <!-- <h2>Choose your center of interests!</h2> -->
+      <ion-slide id="slide1">
+        <h1 text-center><img src="assets/img/logo-forum.png" width="120px"></h1>
+        <p text-center padding>AFRICA-BELGIUM BUSINESS WEEK 2019</p>
+        <p text-center>Le grand forum B2B Europe-Afrique</p>
+      </ion-slide>
+      <ion-slide *ngIf="sliding === true" >
+        <p>Veuillez choisir un pseudo et une photo de profil afin d'accéder à la rubrique <strong>Discussions</strong></p>
+        <div (click)="takePicture()" class="pic-bloc">
+          <img [src]="picture" alt="camera">
+          <h6 text-center padding-top>Prendre une photo</h6>
+        </div>
+        <span id="pseudo">
+          <ion-input color="dark" type="text" placeholder="Saisir un pseudo" [(ngModel)]='pseudo'></ion-input>
+        </span>
+
+        <!-- <button id="qrBtn" ion-button (click)="openQR()" clear color="light" >Vous avez déjà votre billet ?</button> -->
+      </ion-slide>
+    <ion-slide *ngIf="sliding === true" >
+      <h2 *ngIf="selectedInterests.length > 0" text-center>Vous pouvez Commencez</h2>
+     <!--  <ion-grid>
+        <ion-row *ngFor="let int of interests">
+          <ion-col *ngFor="let i of int" (click)="addInterest(i)">
+            <div id="btn">
+              <img id="starIcon" src="assets/Interests/{{i.fav}}.svg">
+              <img src="assets/Interests/{{i.icon}}">
+              <br>
+              <label>{{i.title}}</label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid> -->
+
+     <!--  <ion-card>
+        <ion-card-header>
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-9>Centre d'intérêt</ion-col>
+              <ion-col col-3><ion-icon color="grayColor" name="checkmark"></ion-icon></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list no-lines>
+            <ion-item *ngFor="let int of allinterests">
+              <ion-thumbnail item-start>
+                <img id="starIcon" src="assets/Interests/{{int.icon}}">
+              </ion-thumbnail>
+              <h2>{{int.title}}</h2>
+              <button ion-button clear item-end><ion-icon color="grayColor" name="checkmark"></ion-icon></button>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card> -->
+    </ion-slide>
+  </ion-slides> 
+   
+
+</ion-content>
+
+<ion-footer text-center>
+   <button ion-button clear id="slidbtn" color="light" *ngIf="start === true" (click)="nextSlide()" >
+      SUIVANT
+    </button> 
+    <button ion-button clear id="slidbtn" color="light" *ngIf="start === false" (click)="startChatting()" >
+      COMMENCER !
+    </button>
+</ion-footer>

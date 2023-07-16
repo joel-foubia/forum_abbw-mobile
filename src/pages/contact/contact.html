@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openMenu()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content has-header>
+  <ion-spinner *ngIf="objSpinner" name="dots" obj-spinner></ion-spinner>
+  <div *ngIf="!objSpinner" class="top-header">
+    <!-- <img [src]="contacts.image"> -->
+    <img src="assets/img/welcome.jpg" alt="defaultImg">
+    <h3 text-center>{{contacts.title}}</h3>
+    <p padding> {{contacts.description}} </p>
+  </div>
+  <ion-item>
+    <ion-label stacked>Nom</ion-label>
+    <ion-input type="text" [(ngModel)]="object.name" name="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Adresse Email</ion-label>
+    <ion-input type="email" [(ngModel)]="object.email" name="email"></ion-input>
+  </ion-item>
+  <ion-item transparent>
+    <ion-label stacked>Message</ion-label>
+    <ion-input input="text" type="text" name="message" [(ngModel)]="object.message" placeholder="Ecrivez votre Message..." autocomplete="on"
+      autocorrect="on" class="text-input"></ion-input>
+    <!-- <ion-textarea autosize ></ion-textarea> -->
+  </ion-item>
+  <ion-fab (click)="send()">
+    <button ion-fab color="secondary">
+      <ion-icon name="ios-checkmark-outline"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

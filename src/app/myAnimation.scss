@@ -1,0 +1,105 @@
+@import "../assets/animate/animate.scss";
+.animateApp{
+    ion-fab{
+        @include zoomIn(
+            $duration: 1.5s,
+            $delay: .5s
+        );
+    }
+    .option-sign{
+        ion-col{
+            &:nth-child(1){
+                @include zoomIn(
+                $delay: .6s
+                );
+            } 
+            &:nth-child(2){
+                @include zoomIn(
+                $delay: .8s
+                );
+            } 
+            &:nth-child(3){
+                @include zoomIn(
+                $delay: 1s
+                );
+            }  
+        }
+    }
+    .sub-list , .home-content ion-card{
+        &:nth-child(7n){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: .1s
+            );
+        }
+        &:nth-child(7n+1){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: .4s
+            );
+        }
+        &:nth-child(7n+2){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: .6s
+            );
+        }
+        &:nth-child(7n+3){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: .8s
+            );
+        }
+        &:nth-child(7n+4){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: 1s
+            );
+        }
+        &:nth-child(7n+5){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: 1.2s
+            );
+        }
+        &:nth-child(7n+6){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: 1.4s
+            );
+        }
+        &:nth-child(7n+7){
+            @include slideInLeft(
+                $duration: 1.2s,
+                $delay: 1.6s
+            );
+        }
+    }
+    .activeColor{
+        @include pulse(
+            $count: 1000000000
+        );
+    }
+    .detail-head{
+        img{
+            @include fadeInUp(
+                $duration: 1.3s,
+                $delay: .5s
+            );
+        }
+    }
+    .guide-card{
+        img{
+             @include fadeInUp(
+                $duration: 1.3s,
+                $delay: .5s
+            );
+        }
+    }
+    .user-action{
+        @include fadeIn(
+            $duration: 1.3s,
+            $delay: .5s
+        );
+    }
+}

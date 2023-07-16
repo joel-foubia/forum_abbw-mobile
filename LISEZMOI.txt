@@ -1,0 +1,170 @@
+ONA EVENTS
+-----------------------------
+Application mobile CRM
+
+Installation 
+création du projet Ionic 3
+Plugins
+Templates
+Executer l'application via le navigateur
+
+-------------------------------------
+INSTALLATION ET CONFIGURATION IONIC 3
+-------------------------------------
+Environnement de développement
+L'application sera développé sous le framework Ionic 3.
+version 3.6+
+Cordova platform : cordova-android 6.3.0
+
+Création du projet Ionic
+------------------------
+Saisir la cmd :
+ionic start ona-events blank
+
+-------
+Plugins
+-------
+- Device
+---------
+Il s'agira de savoir quels sont les features du Smartphone 
+qui seront utilisé par l'appareil.
+- Telephone : 
+	ionic cordova plugin add call-number
+	npm install --save @ionic-native/call-number
+	
+- SMS
+	ionic cordova plugin add cordova-sms-plugin
+	npm install --save @ionic-native/sms
+
+- Social Network
+	ionic cordova plugin add cordova-plugin-x-socialsharing
+	npm install --save @ionic-native/social-sharing
+
+- Email
+	ionic cordova plugin add cordova-plugin-email-composer
+	npm install --save @ionic-native/email-composer
+
+- Firebase (video tutorial https://www.youtube.com/watch?v=Q7BNG5EnXCs)
+	$ npm install angularfire2@4.0.0-rc0 firebase@3.6.6 --save
+	
+- Lazy loader pour les images
+	$ npm install ng-lazyload-image --save
+
+- Ajout du plugin Angular Google Map
+   $ npm install angular2-google-maps  --save (ancienne - deprecated)
+   $ npm install @agm/core (recommendé)
+   NB : Obtenir une API Key => https://developers.google.com/maps/documentation/embed/get-api-key
+
+
+- Plugin SOcial sharing
+	$ ionic cordova plugin add cordova-plugin-x-socialsharing
+	$ npm install --save @ionic-native/social-sharing
+
+- Plugin Camera
+	$ ionic cordova plugin add cordova-plugin-camera
+	$ npm install --save @ionic-native/camera
+
+- Plugin Ionic Rating
+	$ npm install --save ionic2-rating
+	
+- Plugin Network Information
+	$ ionic cordova plugin add cordova-plugin-network-information
+	$ npm install --save @ionic-native/network
+	
+- Plugin Translate 
+	$ npm install @ngx-translate/core @ngx-translate/http-loader --save
+	
+--------------------------
+TEMPLATES
+--------------------------
+Le template qui sera utilisé sera basé sur celui de NOMA PROGRAM
+1/ Dupliquer le projet ona avocat (ona smartsales)
+2/ Configuration du projet ona smartsales en fonction de sa structure et de sa charte graphique
+
+PS/ avec cette duplication, les modules comme :
+- Splashscreen
+
+- A Propos
+- Menu gauche (avec profil utilisateur)
+
+seront prédéfinis 
+NB: elles vont subir une personnalisation
+
+
+-----------------
+RUNNING
+-----------------
+- Après avoir dupliqué le projet <ona-smartsales>
+Ouvrir l'invite de commande:
+	cd ona-avocat
+	ionic serve (execute sur le browser)
+	ionic serve -l (visualisation Android, iOS)
+	
+	|-------------------------------------|
+	|Pour les tests, procéder avant d'executer
+	|-------------------------------------
+	|Utiliser le naviguateur Chrome
+	|AJouter l'extension "Allow Cross Origin"
+	|
+
+--
+BUILD APPLICATION
+-------------------------------------
+- Création du fichier apk
+  *
+  (le fichier sera stocké à la racine du projet)
+  * Ajout de la plateforme android
+	$ ionic cordova platform add android
+	$ ionic cordova build android --prod --release
+  * Déplacer le fichier apk (créée)==> (voir fichier DEPLOIEMENT APP MOBILE)
+
+--
+GENERATE APK FILE
+-----------------------
+  Signer le fichier apk
+  ---------------------
+  * Créer une clé privée
+  keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
+	- alias = onaitconsulting
+	- mot de passe:onaitconsulting17
+  
+	Mot de passe pour alias onaitconsulting (pwd:onaitconsulting17)
+  
+  * Signer le fichier apk non signé
+  ---------------------------------
+  jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore onaitconsulting.keystore android-release-unsigned.apk onaitconsulting
+  
+  * Optimiser le fichier apk
+  --------------------------
+  C:/Users/Home/AppData/Local/Android/Sdk/build-tools/26.0.2/zipalign -v 4 android-release-unsigned.apk abbw2018.apk
+   (zipalign =>android_sdk/build-tools/VERSION/zipalign
+ 
+  *Verify that app is signed
+  --------------------------
+  C:/Users/Home/AppData/Local/Android/Sdk/build-tools/26.0.2/apksigner verify abbw2018.apk
+
+
+--------------------
+CHANGELOG
+--------------------
+
+
+
+23/02/2018
+1 - Configuration du projet ONA Events à la suite de la duplication du projet à la base (noma program)
+- Configuration du FIrebase ONA EVENTS
+
+	Database : https://console.firebase.google.com/project/ona-events/database/ona-events/data	
+	Storage: https://console.firebase.google.com/project/ona-events/storage/ona-events.appspot.com/files?hl=fr
+Le principe de gestion des tarifs (packages) sera le meme utilisé par NOMA PROGRAM
+
+- Configuration du Google Map ONA SMART Sales pour la page A Propos
+https://console.developers.google.com/apis/credentials?project=ona-events&hl=fr
+
+
+2- Etablissement de la communication entre l'application mobile et le site web Forum Economique
+
+
+
+22/02/2018
+Configuration du projet Smart Sales pour améliorer le chargement des pages au démarrage de l'application

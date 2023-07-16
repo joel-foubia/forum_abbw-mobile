@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Acteurs</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+	<p text-center><ion-spinner *ngIf="objSpinner" name="dots"></ion-spinner></p>
+
+      <ion-grid *ngIf="intervenants!==undefined">
+        <ion-row>
+          <ion-col (click)="view(item, $event)" *ngFor="let item of intervenants" col-4 col-sm-4 col-md-3 col-lg-3 col-xl-2>
+            <div text-center class="custom-card">
+              <img [defaultImage]="defaultImage" [lazyLoad]="item.photo" [offset]="offset">
+              <h2 text-wrap> {{item.nom}}</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

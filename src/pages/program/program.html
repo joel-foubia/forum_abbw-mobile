@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Programme</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="openMenu()"><ion-icon name="md-more"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+      <div class="timeline">
+            <div class="timeline__group">
+              <div class="timeline__box" *ngFor="let prog of programme">
+                <div class="timeline__date">
+                  <span class="timeline__day">{{prog.Date}}</span>
+                  <span class="timeline__month">{{prog.duration}}</span>
+                </div>
+                <div class="timeline__post">
+                  <div class="timeline__content">
+                    <p *ngFor="let p of prog.details">{{p}}</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+       </div> 
+</ion-content>
+ 

@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Localisation</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+ 
+	<agm-map [latitude]="contact?.map.origin.latitude" [longitude]="contact?.map.origin.longitude" [zoom]="contact?.map.zoom" [mapTypeControl]="mapTypeControl" [streetViewControl]="streetViewControl">
+	  <agm-marker [latitude]="contact?.map.origin.latitude" [longitude]="contact?.map.origin.longitude"></agm-marker>
+	</agm-map>
+        
+</ion-content>

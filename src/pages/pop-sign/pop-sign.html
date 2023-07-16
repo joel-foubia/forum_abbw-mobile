@@ -1,0 +1,62 @@
+
+<ion-content padding>
+    
+    <!-- <div *ngIf="type == undefined">
+
+        <circle-progress [percent]="progress"
+        [boxSize]="200"
+                   [radius]="90"
+                   [lowColor]="'#b6281f'"
+                   [middleColor]="'orange'"
+                   [interColor]="'#f1c40f'"
+                   [highColor]="'#16a085'"
+                   [border]="20"
+                   [fontSize]="30"
+                   [fontFamily]="'open-sans'"
+                   >
+                </circle-progress>
+                
+            </div> -->
+
+    <div *ngIf="type == 'acteurs_details' && actor != undefined">
+
+            <div text-center class="custom-card">
+                    <!-- <img [src]="actor.photo" alt=""> -->
+                    <img [defaultImage]="defaultImage" [lazyLoad]="actor.photo" [offset]="offset">
+
+                    <h2 item-title text-wrap> {{actor.nom}}</h2>
+                <h3 reference text-wrap>{{actor.titre}}</h3>
+                  </div>
+    </div>
+    <div *ngIf="type == 'interests'">
+        <!-- <div text-center>
+
+            <strong>{{pseudo}}</strong> pour continuer, veuillez sélectionner au moins un centre d'intérêt, afin de partarger avec les autres participants (Discussions)
+        </div> -->
+            <ion-card>
+                    <ion-card-header>
+                      <ion-grid no-padding>
+                        <ion-row>
+                          <ion-col class="text" col-9>Cochez vos centres d'intérêts</ion-col>
+                          <ion-col (click)="selectAll()" text-center col-3><ion-icon color="grayColor" [ngClass]="{'icon_selected animated pulse': selected_all == true}" name="checkmark"></ion-icon></ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-list margin-top no-lines>
+                        <ion-item [ngClass]="{'selected animated pulse': int.clicked == true}" (click)="addInt(int)" *ngFor="let int of interestList">
+                          <ion-avatar item-start>
+                            <img id="starIcon" src="assets/Interests/{{int.icon}}">
+                          </ion-avatar>
+                          <h2>{{int.title}}</h2>
+                          <button ion-button clear item-end><ion-icon  color="grayColor" [ngClass]="{'icon_selected animated pulse': int.clicked == true}" name="checkmark"></ion-icon></button>
+                        </ion-item>
+                      </ion-list>
+                    </ion-card-content>
+                    <div text-center>
+
+                        <button block ion-button (click)="finish()" >Terminer</button>
+                    </div>
+                  </ion-card>
+    </div>
+</ion-content>

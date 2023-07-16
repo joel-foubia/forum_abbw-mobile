@@ -1,0 +1,35 @@
+/*  # Style Image Sub-Gallery for Category 1 (Animals)
+=======================================================*/
+sub-image-gallery-layout-1 {
+  ion-card {
+    position: relative;
+    height: 130px;
+    width: 100% !important;
+  }
+
+  [gallery-title] {
+    position: absolute;
+    color: color($colors, light);
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(99, 49, 142, 0.5)!important;
+    bottom: 0;
+    min-height: 45px;
+    border-bottom: 1px solid transparent !important;
+
+    ion-icon .icon {
+      color: color($colors, light);
+      font-size: icon-size('icon-small');
+      margin-top: 5px;
+      display: block;
+    }
+  }
+
+  [background-size] {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  
+}

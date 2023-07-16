@@ -1,0 +1,37 @@
+<ion-header no-border>
+
+  <ion-navbar text-center>
+    <ion-title></ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		</ion-buttons>     -->
+		<ion-buttons end>
+      <button ion-button icon-only (click)="openMenu()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+	<div padding class="bloc-titre" *ngIf="data_map!==undefined">
+		<h2 class="animated fadeIn delay-1s down_icon">{{data_map.title}}</h2>
+		<p class="animated slideInDown delay-2s" *ngIf="current_lang=='fr'">{{data_map.date_event}}</p>
+		<p class="animated slideDown" *ngIf="current_lang!='fr'">{{data_map.date_event_en}}</p>
+	</div>
+	<div class="main-wrapper">
+			<div *ngFor="let item of menus" (click)="itemTapped(item)" class="badge yellow">
+				<div class="circle"> <i class="icon {{item.icon}}"></i></div>
+				<div class="ribbon" >{{item.title}}</div>
+			</div>
+	</div>		
+	<!-- <ul class="menu" padding>
+	    <li >
+	      <img [src]="item.icon" /> <br>
+	      {{item.title}}
+	    </li>
+	</ul> -->
+</ion-content>

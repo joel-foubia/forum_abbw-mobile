@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Parrains et Marraines</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	
+	<h4>JE DONNE TOUS LES MOIS, JE DEVIENS MARRAINE OU PARRAIN</h4>
+	<div zone-parrain>
+		<button ion-button block text-wrap color="bleu" (click)="openForm()" icon-right>
+	    	CHOISISSEZ UN DON
+		    <ion-icon name="ios-contacts-outline"></ion-icon> 
+	  	</button>
+  		<p [innerHTML]="txtParrain"></p>
+	</div>
+
+	<ion-spinner name="dots" *ngIf="objSpinner" obj-spinner></ion-spinner>
+	<ion-list *ngIf="!objSpinner">
+		<ion-list-header>Liste des parrains et Marraines</ion-list-header>
+		<ion-item *ngFor="let p of parrains;let i = index">
+			<ion-avatar item-start *ngIf="i!=0">
+				<img *ngIf="p.civil=='Mr'" [src]="imgMan">
+				<img *ngIf="p.civil!='Mr'" [src]="imgWoman">
+			</ion-avatar>
+			<h3 *ngIf="i!=0">{{p.civil}} {{p.nom}} {{p.prenom}}</h3>
+			<h4 *ngIf="i!=0">{{p.compagny}}</h4>
+			
+		</ion-item>
+	</ion-list>
+	
+	
+</ion-content>

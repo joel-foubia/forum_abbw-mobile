@@ -1,0 +1,50 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-left>Frais de participation</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="openMenu()"><ion-icon name="md-more"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="tarifs!=undefined">
+<p text-center><ion-spinner *ngIf="objSpinner" name="dots"></ion-spinner></p>
+		<!-- <h3>Tarifs Forum</h3>
+	<ion-card *ngFor="let tarif of tarifs">
+	
+	  <ion-card-header *ngIf="current_lang=='fr'">{{tarif.title}}</ion-card-header>
+	  <ion-card-header *ngIf="current_lang!='fr'">{{tarif.title_en}}</ion-card-header>
+	
+	  <ion-card-content>
+	    <h2>{{tarif.currency}} {{tarif.price }}</h2>
+	    <p *ngIf="current_lang=='fr'" [innerHTML]="tarif.d"></p>
+	    <p *ngIf="current_lang!='fr'" [innerHTML]="tarif.d_en"></p>
+	  </ion-card-content>
+	
+	</ion-card>
+	<button (click)="send()" ion-button block color="primary">JE M'INSCRIS</button> -->
+
+	<div class="background">
+			<div class="container">
+				<div class="panel pricing-table">
+					
+					<div class="pricing-plan" *ngFor="let tarif of tarifs">
+							<ion-icon name="ribbon" class="pricing-img"></ion-icon>
+						<!-- <img *ngIf="tarif.price == 150" src="assets/icon/paper-plane.png" alt="" > -->
+						<!-- <img *ngIf="tarif.price == 300" src="assets/icon/plane.png" alt="" class="pricing-img"> -->
+						<h2 text-center class="pricing-header">Frais de participation</h2>
+						
+						<span text-center class="pricing-price">{{tarif.currency}} {{tarif.price }}</span>
+						<!-- <a href="#/" class="pricing-button">Sign up</a> -->
+						<span text-center><p class="first-letter" text-lowercase *ngIf="current_lang=='fr'" [innerHTML]="tarif.d"></p></span>
+						<button clear (click)="send()" ion-button block color="primary" class="pricing-button">JE M'INSCRIS</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+</ion-content>

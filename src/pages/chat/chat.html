@@ -1,0 +1,66 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Discussions</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="more"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+    <ion-toolbar class="interest">
+      <!-- <h6 text-center>Vos centres d'intérêts</h6> -->
+      <!-- <p text-center>Veuillez choisir un centre d'intérêt ci-dessus pour échanger avec d'autres participants</p> -->
+      <ion-scroll *ngIf="storedInterests.length > 0" class="horizontal-scroll" scrollX="true">
+          <span text-center [ngClass]="{'subCatSelected':item.selected == true}" (click)="onSelectInterest(item)" *ngFor="let item of storedInterests">
+              <div text-center>
+                <img src="assets/Interests/{{item.icon}}" alt="">
+              </div>
+
+               <p>
+                {{item.title}}
+               </p>
+            </span>
+      </ion-scroll>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+
+  <h6 tex-center padding *ngIf="messages.length == 0 && choosedInterest == undefined"> Veuillez choisir un centre d'intérêt ci-dessus pour échanger avec d'autres participants</h6>
+  <h6 tex-center padding *ngIf="messages.length == 0 && choosedInterest != undefined"> Aucun message. Soyez le premier a parler dans <strong> {{choosedInterest?.title}} </strong></h6>
+
+  <span>
+    <div class="mymessage" *ngFor="let m of messages | slice:0:max">
+      <img *ngIf="m.prof_img != undefined" [class]="m.uid == uniqueId ? 'floatRight' : 'floatLeft'" [src]="m.prof_img" alt="prof">
+      <img *ngIf="m.prof_img == undefined" [class]="m.uid == uniqueId ? 'floatRight' : 'floatLeft'" src="assets/images/ambassadeur.jpg" alt="prof">
+      <div [class]="m.uid == uniqueId ? 'speech-bubble-right messageRight innerMessage' : 'speech-bubble-left innerMessage messageLeft'">
+        <div *ngIf="m.uid != uniqueId" id="user">{{m.username}}</div>
+        <div *ngIf="m.uid == uniqueId" id="user">Vous</div>
+        <div class="mymessage">{{m.message}}</div>
+        <div class="date"> <ion-icon name="ios-clock-outline"></ion-icon> {{m.date_pub}}</div>
+      </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </span>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row no-padding>
+      <ion-col no-padding col-10>
+          <ion-input #input id="messagetext" type="text" placeholder="Ecrire votre message ici..." [(ngModel)]="message"></ion-input>
+      </ion-col>
+      <ion-col no-padding col-2>
+        <button ion-button clear (click)="send()">
+          Envoyer
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

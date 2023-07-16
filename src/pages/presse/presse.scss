@@ -1,0 +1,115 @@
+page-presse {
+	.scroll-content {
+		// background-color: lighten(color($colors, light), 6%) !important;
+		background-color: color($colors, lightest) !important
+	}
+	.interest .toolbar-background-md {
+		background-color: lighten(color($colors, gris), 6%) !important;
+	}
+	
+
+	h1,
+	p {
+		color: color($colors, dark);
+	}
+
+	ion-item.item {
+		display: block;
+		margin: auto;
+		text-align: left;
+		width: 345px !important;
+		color: black !important;
+	}
+
+	#message {
+		text-align: center;
+		border-radius: 5px !important;
+		color: color($colors, dark);
+		// background: rgba(31, 31, 31, 0.8);
+	}
+	.col {
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+	}
+	ion-label {
+		color: color($colors, dark) !important;
+	}
+	ion-item {
+		height: 60px !important;
+	}
+
+	ion-input.input {
+		color: color($colors, dark) !important;
+	}
+	ion-label {
+	}
+
+	ion-select.select {
+		max-width: 100%;
+		padding-left: 0px;
+		padding-top: 8px;
+	}
+	div.select-text {
+		color: color($colors, dark) !important;
+		max-width: 100%;
+	}
+	ion-item {
+		margin-bottom: 10px !important;
+	}
+	ion-slides.slides {
+		height: unset;
+	}
+	div.swiper-pagination {
+		bottom: 5px !important;
+	}
+	.sendImg {
+		width: 55px !important;
+		position: absolute !important;
+		left: 0px;
+		top: 80px;
+		right: 0px;
+	}
+
+	/* hr{
+		border-bottom-color: red !important;
+		width: 40% !important;
+		display: inline-block !important;
+		margin-left: 26px !important;
+	}
+	hr{
+	 	transition: (.3s width ease-in-out);
+		 &:hover{
+			 // cursor: pointer;
+			 width: 100%
+			}
+		} */
+	hr {
+		background-color: red !important;
+		width: 40% !important;
+		display: inline-block !important;
+		margin-left: 26px !important;
+	}
+	#input:focus + hr {
+		transition: (.3s width ease-in-out);
+		cursor: pointer;
+		width: 100%;
+	}
+	ion-footer.footer.footer-md::before{
+		background-image: none !important
+	}
+
+	ion-grid {
+		button {
+			// height: 40px !important;
+			// margin-top: 1px !important;
+			// border-radius: 8px !important;
+			// text-transform: capitalize !important;
+			// padding-left: 0px !important
+		}
+	}
+	
+	ion-fab[bottom]{
+		bottom: 60px !important
+	}
+}
+

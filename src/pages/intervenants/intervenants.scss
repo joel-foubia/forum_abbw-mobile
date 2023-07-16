@@ -1,0 +1,58 @@
+page-intervenants {
+	.scroll-content{
+        padding-top: 40px !important;
+        background-color: color($colors, lightest) !important;
+	}
+
+	ul{
+        margin:0;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    ion-col{
+        h2{
+            font-size: 0.9em !important;
+        }
+        h2:first-letter {
+            text-transform: capitalize;
+            // color : green;
+            font-size: 14px;
+        }
+    }
+
+    .custom-card{
+        
+
+        [item-title]{
+        
+            font-size: 0.8em !important;
+            text-transform: uppercase;
+            font-weight: bold !important;
+        }
+
+        [reference]{
+            font-weight: bold;
+            color:color($colors, primary);
+            font-size: 1.0em;
+        }
+
+        h4{
+            
+            font-size: 1.0em;
+            color:color($colors, primary);
+        }
+
+        img {
+            width: 105px !important;
+            transition: opacity 1s;
+            border-radius: 50%;
+            opacity: 0.2;
+            // border:3px solid rgba(106, 101, 100, 0.7);
+        }
+        img.ng-lazyloaded {
+            opacity: 1;
+        }
+
+    }
+}

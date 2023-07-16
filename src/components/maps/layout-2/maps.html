@@ -1,0 +1,65 @@
+<!--Google Maps Gmaps + About Us-->
+<ion-content has-header>
+  <ion-grid no-padding>
+    <ion-row item-bcg padding>
+     
+      <!---About Name-->
+      <ion-col col-12>
+        <ion-item map-header item-bcg no-lines>
+          <img [lazyLoad]="data.logo" class="logo" />
+          <h1 maps-title>{{data.contentTitle}}</h1>
+          <p maps-subtitle text-wrap>version {{data.versionName}}</p>
+		  <p maps-subtitle text-wrap>{{data.contentDescription}}</p>
+        </ion-item>
+		
+      </ion-col>
+      <!---About Us-->
+      <ion-col col-12 map-content>
+        <ion-item no-lines item-bcg>
+          <h2 title>{{data.title}}</h2>
+		      <p maps-subtitle text-wrap>{{data.titleDescription}}</p>
+        </ion-item>
+      <!---About Info-->
+      <div info>
+      <ion-item no-lines item-bcg>
+        <ion-icon item-left icon-small name="{{data.iconLoacation}}"></ion-icon>
+        <p no-margin description text-wrap>{{data.iconLoacationText}}</p>
+      </ion-item>
+      <ion-item no-lines item-bcg>
+        <ion-icon item-left icon-small name="{{data.iconWatch}}"></ion-icon>
+        <p no-margin description>{{data.iconWatchText}}</p>
+      </ion-item>
+      <ion-item no-lines item-bcg>
+        <ion-icon item-left icon-small name="{{data.iconPhone}}"> </ion-icon>
+        <p no-margin description>{{data.iconPhoneText}}</p>
+      </ion-item>
+      <ion-item no-lines item-bcg>
+        <ion-icon item-left icon-small name="{{data.iconEarth}}"></ion-icon>
+        <p no-margin description>{{data.iconEarthText}}</p>
+      </ion-item>
+      <ion-item no-lines item-bcg>
+        <ion-icon item-left icon-small name="{{data.iconEmail}}"></ion-icon>
+        <p no-margin description>{{data.iconEmailText}}</p>
+      </ion-item>
+	    <ion-item no-lines item-bcg>
+        <p no-margin text-wrap map-soustitre>{{data.copyright}}</p>
+      </ion-item>
+    </div>
+      </ion-col>
+    </ion-row>
+    <!---MAP TEXT-->
+    <ion-row padding-left item-bcg>
+      <ion-col col-12>
+        
+      </ion-col>
+        <!---MAP-->
+    </ion-row>
+      <ion-row>
+        <ion-col col-12 *ngIf="data"> 
+        <agm-map [latitude]="data.map?.lat" [longitude]="data.map?.lng" [zoom]="data.map?.zoom" [mapTypeControl]="data.map?.mapTypeControl" [streetViewControl]="data.map?.streetViewControl">
+          <agm-marker [latitude]="data.map?.lat" [longitude]="data.map?.lng"></agm-marker>
+        </agm-map>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

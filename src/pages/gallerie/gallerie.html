@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gallerie</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<sub-image-gallery-layout-1
+	  *ngIf="params!=undefined"
+	  [data]="params.data"
+	  >
+	</sub-image-gallery-layout-1>
+</ion-content>

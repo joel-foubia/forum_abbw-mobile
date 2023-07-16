@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-left>Documents</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="org_hearder">
+    <h1>Documents Pratiques</h1>
+  </div>
+   
+    <ion-grid *ngIf="links">
+      <ion-row>
+        <p>Vous pouvez télécharger les fichiers ci-dessous</p>
+        <ion-col text-center col-6 (click)="viewPdf(link)" *ngFor="let link of links">
+          <ion-icon name="ios-copy-outline" item-start></ion-icon>
+          <h2>{{link.titre}}</h2>
+      </ion-col>        
+      </ion-row>
+    </ion-grid>
+</ion-content>

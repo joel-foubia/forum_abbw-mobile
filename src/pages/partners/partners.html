@@ -1,0 +1,91 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Partenaires</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openMenu()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid *ngIf="partenaire!==undefined" no-padding>
+    <div class="ribbon">
+      Partenaire(s) Officiel
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <ion-row>
+      <ion-slides #idSlide pager="true" direction="horizontal" paginationType="bullets" loop="true" speed="3000" class="pagination">
+        <ion-slide>
+          <img src={{partenaire.Partenaires_officiel.photo}} class="effect1">
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <div class="ribbon">
+      Partenaire(s)
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <ion-row>
+      <ion-slides #idSlide pager="true" direction="horizontal" paginationType="bullets" loop="true" speed="3000" class="pagination">
+        <ion-slide *ngFor="let img of partenaire.partenaire">
+          <img style="display: inline-block;" src={{img.photo}} class="effect1">
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+
+    <div class="ribbon">
+      Sponsors Gold
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <ion-row>
+      <ion-slides #idSlide pager="true" direction="horizontal" paginationType="bullets" loop="true" speed="3000" class="pagination">
+        <ion-slide *ngFor="let gold of partenaire.sponsorsGold">
+          <img src={{gold.photo}} class="effect1">
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <div class="ribbon">
+      Sponsors Silver
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <ion-row>
+      <ion-slides #idSlide pager="true" direction="horizontal" paginationType="bullets" loop="true" speed="3000" class="pagination">
+        <ion-slide *ngFor="let silver of partenaire.sponsorsSilver">
+          <img src={{silver.photo}} class="effect1">
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+
+    <div class="ribbon">
+      Partenaires Medias
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+    <ion-row>
+      <ion-slides #idSlide pager="true" direction="horizontal" paginationType="bullets" loop="true" speed="3000" class="pagination">
+        <ion-slide *ngFor="let media of partenaire.partenaireMedias">
+          <img src={{media.photo}} class="effect1">
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+</ion-content>

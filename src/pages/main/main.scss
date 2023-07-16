@@ -1,0 +1,132 @@
+page-main {
+
+	.content {
+	    
+	    background-image: url('../assets/img/welcome.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+	}
+
+	.toolbar-background{
+		background: transparent;
+	}
+
+	@mixin margin-auto {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
+	.main-wrapper {
+		width: 95%;
+		// max-width: 900px;
+		padding-top: 5px !important;
+		margin: 3em auto;
+		text-align: center;
+		background-color: rgba($color: color($colors, dark), $alpha: 0.8);
+	}
+	
+	.badge {
+		position: relative;
+		margin: 1.0em 2em;
+		width: 2em;
+		height: 4.5em;
+		border-radius: 10px;
+		display: inline-block;
+		top: 0;
+		transition: all 0.2s ease;
+		&:before,
+		&:after {
+			position: absolute;
+			width: inherit;
+			height: inherit;
+			border-radius: inherit;
+			background: inherit;
+			content: "";
+			@include margin-auto;
+		}
+		&:before {
+			transform: rotate(60deg);
+		}
+		&:after {
+			transform: rotate(-60deg);
+		}
+		
+		.circle {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			background: color($colors, light);
+			z-index: 10;
+			border-radius: 50%;
+			@include margin-auto;
+			margin-right: -6px;
+			i.icon {
+				font-size: 2em;
+				margin-top: 8px;
+			}
+		}
+		.font {
+			display: inline-block;
+			margin-top: 1em;
+		}
+		.ribbon {
+			position: absolute;
+			// border-radius: 4px;
+			padding: 5px 5px 4px;
+			top: 50px;
+			width: 100px;
+			z-index: 11;
+			color: color($colors, light);
+			bottom: 12px;
+			left: 50%;
+			margin-left: -55px;
+			// height: 18px;
+			font-size: 0.85em;
+
+		}
+	}
+	
+	.yellow {
+		// background: linear-gradient(to bottom right, #ffeb3b 0%, #fbc02d 100%);
+		color: color($colors, secondary);
+	}
+
+	.bloc-titre{
+		h2 {
+			position: relative;
+			font-family: sans-serif;
+			text-transform: uppercase;
+			font-size: 2em;
+			letter-spacing: 4px;
+			width: 90%;
+			overflow: hidden;
+			background: linear-gradient(90deg, #ccc, #fff, #ccc);
+			background-repeat: no-repeat;
+			background-size: 98%;
+			//animation: animate 3s linear;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: rgba(255, 255, 255, 0);
+		  }
+		  
+
+		p{
+			color: color($colors, light);
+			// padding-top: 5px;
+			line-height: 30px;
+			&:before {
+				content: "";
+				position: absolute;
+				height: 4px;
+				background: color($colors, primary);
+				width: 35px;
+				// margin-bottom: 5px !important;
+				// top: 22%;
+				border-radius: 3px;
+			  }
+		}
+	}
+}
